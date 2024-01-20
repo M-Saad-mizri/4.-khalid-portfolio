@@ -11,6 +11,57 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" 
     crossorigin="anonymous">    
+       <!-- Google Analytics Tracking Code -->
+       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-Y"></script>
+       <script>
+           window.dataLayer = window.dataLayer || [];
+           function gtag() { dataLayer.push(arguments); }
+           gtag('js', new Date());
+           gtag('config', 'UA-XXXXXXXXX-Y');
+       </script>
+       <!-- End Google Analytics Tracking Code -->
+   
+       <!-- JavaScript to Display Visitor Count -->
+       <script>
+           // Function to fetch real-time visitor count
+           function getRealtimeVisitors() {
+               gtag('event', 'page_view', {
+                   'send_to': 'UA-XXXXXXXXX-Y',
+                   'event_callback': function() {
+                       // Use the Reporting API to fetch real-time data
+                       gtag('event', 'timing_complete', {
+                           'name': 'realtime',
+                           'value': performance.now(),
+                           'event_category': 'JS Dependencies',
+                           'event_label': 'Load'
+                       });
+                   }
+               });
+           }
+   
+           // Function to display visitor count on the webpage
+           function displayVisitorCount() {
+               gtag('config', 'UA-XXXXXXXXX-Y', {
+                   'page_title': 'Realtime Visitors',
+                   'page_path': '/realtime-visitors'
+               });
+   
+               // Fetch and display real-time visitor count
+               gtag('event', 'timing_complete', {
+                   'name': 'realtime',
+                   'value': performance.now(),
+                   'event_category': 'JS Dependencies',
+                   'event_label': 'Load',
+                   'event_callback': function() {
+                       var activeUsers = gtag('get', 'event', 'realtime');
+                       document.getElementById('visitor-count').innerText = activeUsers.length;
+                   }
+               });
+           }
+   
+           // Call the function to display visitor count
+           displayVisitorCount();
+       </script>
     
 </head>
 <body>
@@ -48,7 +99,7 @@
             </div>
 
         </div>
-
+        <p>Number of Visitors: <span id="visitor-count">Loading...</span></p>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 <script src="code.js"></script>
