@@ -12,12 +12,12 @@
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" 
     crossorigin="anonymous">    
        <!-- Google Analytics Tracking Code -->
-       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-Y"></script>
+       <script async src="https://www.googletagmanager.com/gtag/js?id=G-61WE08KWR4"></script>
        <script>
            window.dataLayer = window.dataLayer || [];
            function gtag() { dataLayer.push(arguments); }
            gtag('js', new Date());
-           gtag('config', 'UA-XXXXXXXXX-Y');
+           gtag('config', 'G-61WE08KWR4');
        </script>
        <!-- End Google Analytics Tracking Code -->
    
@@ -26,7 +26,7 @@
            // Function to fetch real-time visitor count
            function getRealtimeVisitors() {
                gtag('event', 'page_view', {
-                   'send_to': 'UA-XXXXXXXXX-Y',
+                   'send_to': 'G-61WE08KWR4',
                    'event_callback': function() {
                        // Use the Reporting API to fetch real-time data
                        gtag('event', 'timing_complete', {
@@ -41,7 +41,7 @@
    
            // Function to display visitor count on the webpage
            function displayVisitorCount() {
-               gtag('config', 'UA-XXXXXXXXX-Y', {
+               gtag('config', 'G-61WE08KWR4', {
                    'page_title': 'Realtime Visitors',
                    'page_path': '/realtime-visitors'
                });
