@@ -17,14 +17,14 @@ body{
     align-items: center; margin-top: 3em;
 }
 .social-media{
-    margin-top: 30px;
+    margin-top: -27px;
     padding: 10px 20px 10px 20px;
     width: 100%;
     background-color: rgba(165, 145, 145, 0.227);
     border-radius: 20px;
     display: flex;
     justify-content: space-between;
-    margin-top: 100px;
+    box-shadow: 15px 5px 150px rgba(128, 128, 128, 0.438);
 }
 a{
     color: rgba(128, 128, 128, 0);
@@ -76,8 +76,9 @@ width: 120px; /* Adjust width for smaller screens */
 }
 
 .social-media {
-margin-top: 20px; /* Adjust margin for smaller screens */
+margin-top: -120px; /* Adjust margin for smaller screens */
 padding: 15px; /* Adjust padding for smaller screens */
+box-shadow: 15px 5px 150px rgba(128, 128, 128, 0.438);
 }
 .name{
 margin-top: 20px;
